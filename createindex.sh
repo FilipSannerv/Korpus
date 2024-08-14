@@ -19,8 +19,8 @@ echo "Generating index..."
 # Create a temporary file to store the sorted output
 temp_file=$(mktemp)
 
-# Sort the file by the word alphabetically, and then by the number (offset)
+# Sort the file alphabetically, and then in order of offsets
 sort -k1,1 -k2,2n rawindex.txt > "$temp_file"
 
-# Overwrite the original file with the sorted content
+# Overwrite index with sorted index
 mv "$temp_file" rawindex.txt
